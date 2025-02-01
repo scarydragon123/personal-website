@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Worlds. Two Mysteries. One Adventure.</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero-tagline">
+        <div class="tagline-content">
+            <span class="tagline-decoration left"></span>
+            <h1>Two Worlds. Two Mysteries. One Adventure.</h1>
+            <span class="tagline-decoration right"></span>
+        </div>
+    </div>
+    <nav class="main-nav">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-book-open"></i></span>
+                <span class="logo-text">Nic Drinkwater</span>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="background-overlay"></div>
+        <div class="split-container">
+            <div class="split left">
+                <div class="book-preview">
+                    <div class="preview-content">
+                        <div class="book-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h2>The Case of the Missing Children</h2>
+                        <p>A thrilling mystery set in the enchanted world of Neltopia, where ancient forests hold secrets waiting to be uncovered.</p>
+                        <button class="explore-btn" data-book="neltopia">
+                            <span class="btn-text">Enter Neltopia</span>
+                            <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                        </button>
+                    </div>
+                    <div class="preview-decoration"></div>
+                </div>
+            </div>
+            <div class="split right">
+                <div class="book-preview">
+                    <div class="preview-content">
+                        <div class="book-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h2>Fishing in the Mines</h2>
+                        <p>Dive deep into the mysterious mines of Sporelle, where darkness conceals both danger and wonder.</p>
+                        <button class="explore-btn" data-book="sporelle">
+                            <span class="btn-text">Descend into the Mines</span>
+                            <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                        </button>
+                    </div>
+                    <div class="preview-decoration"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About the Author</h2>
+            <div class="author-content">
+                <div class="author-bio">
+                    <!-- Add your bio here -->
+                </div>
+                <div class="writing-process">
+                    <h3>Behind the Scenes</h3>
+                    <!-- Add content about your writing process -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2>Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="assets/images/nic.jpg" alt="Nic Drinkwater" onerror="this.src='assets/images/placeholder.jpg'">
+                    </div>
+                    <div class="member-info">
+                        <h3>Nic Drinkwater</h3>
+                        <p class="role">Author</p>
+                        <p class="description">Creator of these magical worlds and the stories that bring them to life.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="assets/images/raphaela.jpg" alt="Raphaela Miller" onerror="this.src='assets/images/placeholder.jpg'">
+                    </div>
+                    <div class="member-info">
+                        <h3>Raphaela Miller</h3>
+                        <p class="role">Illustrator</p>
+                        <p class="description">Bringing the characters and scenes to life through stunning artwork.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="assets/images/madison.jpg" alt="Madison Wood" onerror="this.src='assets/images/placeholder.jpg'">
+                    </div>
+                    <div class="member-info">
+                        <h3>Madison Wood</h3>
+                        <p class="role">Illustrator</p>
+                        <p class="description">Creating beautiful illustrations that capture the magic of our stories.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Stay Connected</h2>
+            <div class="contact-content">
+                <form id="contact-form" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="newsletter-signup">
+                    <h3>Join the Adventure</h3>
+                    <p>Subscribe for exclusive updates, sneak peeks, and special offers.</p>
+                    <form id="newsletter-form">
+                        <input type="email" name="newsletter-email" placeholder="Your Email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-goodreads"></i></a>
+        </div>
+        <p>&copy; 2025 Nic Drinkwater. All Rights Reserved.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
