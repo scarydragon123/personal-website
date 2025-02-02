@@ -3,11 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fishing in the Mines - Welcome to Sporelle</title>
+    <title>Descend into the Mines - A Tale of Underground Mystery</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/sporelle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .book-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('assets/images/mine-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .creator-card {
+            background: linear-gradient(145deg, rgba(30,30,30,0.9), rgba(20,20,20,0.9));
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 35px;
+            margin: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .creator-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border-color: rgba(255,215,0,0.3);
+        }
+
+        .creator-icon {
+            font-size: 3.5em;
+            margin-bottom: 25px;
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .creator-info {
+            color: #ffffff;
+        }
+
+        .creator-info h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .creator-info p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        .creators-section {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .creators-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.5), transparent);
+        }
+
+        .creators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+            font-size: 2.8em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #ff8c00);
+            margin: 20px auto;
+        }
+
+        .pre-order-btn {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            border: none;
+            padding: 18px 36px;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pre-order-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+        }
+
+        .pre-order-section {
+            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .pre-order-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .pre-order-section p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #cccccc;
+        }
+
+        @media (max-width: 768px) {
+            .creators-grid {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+
+            .section-title {
+                font-size: 2.2em;
+            }
+
+            .creator-card {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 <body class="sporelle-theme">
     <nav class="main-nav">
@@ -18,83 +187,38 @@
                 <li><a href="#story">Story</a></li>
                 <li><a href="#characters">Characters</a></li>
                 <li><a href="#world">World</a></li>
-                <li><a href="#chapters">Chapters</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="book-hero">
         <div class="hero-content">
-            <h1>Fishing in the Mines</h1>
-            <p class="tagline">Beneath the surface, danger runs deep...</p>
+            <h1>Descend into the Mines</h1>
+            <p class="tagline">Where darkness holds secrets, and courage lights the way...</p>
             <div class="book-description">
-                <p>A high-stakes adventure in an underground world filled with danger and forbidden truths.</p>
-                <p class="expanded-description">Deep beneath the surface of Sporelle, where the rare ore tompsprute glows with an otherworldly blue light, two young Avers are about to discover that some secrets should stay buried. When a routine mining expedition turns into a deadly race for survival, Bob and Alexa must uncover the truth behind the vanished city and the whispers beyond the electrified border. What lies beyond the fence? And why has no one ever returned?</p>
-            </div>
-            <div class="mine-elements">
-                <!-- Animated mining elements will be added via CSS -->
+                <p>An underground adventure that will test the limits of bravery and friendship.</p>
+                <p class="expanded-description">Deep beneath the surface, in the mysterious mines of Sporelle, ancient secrets await discovery and dangerous challenges must be overcome.</p>
             </div>
         </div>
     </header>
 
-    <section id="story" class="story-section">
-        <div class="container">
-            <h2>The Story</h2>
-            <div class="story-content">
-                <div class="story-text">
-                    <p>Deep beneath the surface of Sporelle, where the rare ore tompsprute glows with an otherworldly blue light, two young Avers are about to discover that some secrets should stay buried.</p>
-                    <p>Bob and Alexa's routine mining expedition becomes a desperate fight for survival when they stumble upon a truth that challenges everything they know about their world. As they venture deeper into the abandoned mines, they must confront not only the physical dangers that lurk in the darkness but also the haunting question: What really lies beyond the electrified fence?</p>
-                </div>
-                <div class="story-quote">
-                    <blockquote>"In the mines of Sporelle, every echo tells a story, and every story holds a warning."</blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="characters" class="characters-section">
-        <div class="container">
-            <h2>Meet the Characters</h2>
-            <div class="character-cards">
-                <div class="character-card">
-                    <div class="character-image bob"></div>
-                    <h3>Bob</h3>
-                    <p>A skilled Aver with years of experience in the mines. His instincts have kept him alive, but his curiosity might be his undoing.</p>
-                </div>
-                <div class="character-card">
-                    <div class="character-image alexa"></div>
-                    <h3>Alexa</h3>
-                    <p>A tech-savvy explorer whose knowledge of ancient mining equipment becomes invaluable in their quest for truth.</p>
-                </div>
-                <div class="character-card">
-                    <div class="character-image overseer"></div>
-                    <h3>The Overseer</h3>
-                    <p>The mysterious figure who controls access to the mines and guards their deepest secrets.</p>
-                </div>
-                <div class="character-card">
-                    <div class="character-image whispers"></div>
-                    <h3>The Whispers</h3>
-                    <p>The unexplained voices that echo through the abandoned tunnels, leading miners to their doom... or to the truth.</p>
+    <section class="creators-section">
+        <h2 class="section-title">The Creative Team</h2>
+        <div class="creators-grid">
+            <div class="creator-card">
+                <i class="fas fa-pen-nib creator-icon"></i>
+                <div class="creator-info">
+                    <h3>Nic Drinkwater</h3>
+                    <p>Author</p>
+                    <p>Crafting underground tales of mystery and courage</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="world" class="world-section">
-        <div class="container">
-            <h2>The World of Sporelle</h2>
-            <div class="world-features">
-                <div class="world-feature">
-                    <h3>The Mining Complex</h3>
-                    <p>A vast network of tunnels and caverns, illuminated by the ethereal glow of tompsprute ore.</p>
-                </div>
-                <div class="world-feature">
-                    <h3>The Electric Fence</h3>
-                    <p>The mysterious barrier that separates the known world from what lies beyond.</p>
-                </div>
-                <div class="world-feature">
-                    <h3>The Abandoned Levels</h3>
-                    <p>Deep mine sections where ancient machinery still hums with unknown purpose.</p>
+            <div class="creator-card">
+                <i class="fas fa-paint-brush creator-icon"></i>
+                <div class="creator-info">
+                    <h3>Sarah Anderson</h3>
+                    <p>Illustrator</p>
+                    <p>Illuminating the depths of Sporelle's mines</p>
                 </div>
             </div>
         </div>
@@ -102,17 +226,9 @@
 
     <section class="pre-order-section">
         <div class="container">
-            <h2>Descend into the Story</h2>
-            <p>Pre-order now and receive an exclusive digital map of the Sporelle Mining Complex</p>
+            <h2>Start Your Underground Journey</h2>
+            <p>Pre-order now and receive an exclusive digital map of the Sporelle Mines</p>
             <button class="pre-order-btn">Pre-order Now</button>
-            <div class="newsletter-signup">
-                <h3>Stay Updated</h3>
-                <p>Join our mailing list for exclusive content and updates</p>
-                <form id="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
         </div>
     </section>
 
@@ -120,11 +236,9 @@
         <div class="social-links">
             <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-goodreads"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
         <p>&copy; 2025 Nic Drinkwater. All Rights Reserved.</p>
     </footer>
-
-    <script src="assets/js/sporelle.js"></script>
 </body>
 </html>
