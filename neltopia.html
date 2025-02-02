@@ -8,6 +8,79 @@
     <link rel="stylesheet" href="assets/css/neltopia.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .book-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/neltopia-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .creator-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .creator-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .creator-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .creator-info {
+            color: white;
+        }
+
+        .creators-section {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            padding: 50px 0;
+        }
+
+        .creators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .pre-order-btn {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .pre-order-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body class="neltopia-theme">
     <nav class="main-nav">
@@ -99,6 +172,28 @@
         </div>
     </section>
 
+    <section class="creators-section">
+        <h2 class="section-title">The Creators</h2>
+        <div class="creators-grid">
+            <div class="creator-card">
+                <i class="fas fa-pen-fancy creator-icon"></i>
+                <div class="creator-info">
+                    <h3>Nic Drinkwater</h3>
+                    <p>Author</p>
+                    <p>Weaving tales of mystery and adventure</p>
+                </div>
+            </div>
+            <div class="creator-card">
+                <i class="fas fa-paint-brush creator-icon"></i>
+                <div class="creator-info">
+                    <h3>Sarah Anderson</h3>
+                    <p>Illustrator</p>
+                    <p>Bringing the world of Neltopia to life</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="pre-order-section">
         <div class="container">
             <h2>Begin Your Journey</h2>
@@ -119,7 +214,7 @@
         <div class="social-links">
             <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-goodreads"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
         <p>&copy; 2025 Nic Drinkwater. All Rights Reserved.</p>
     </footer>
