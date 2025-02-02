@@ -126,38 +126,64 @@
     <section id="team" class="team-section">
         <div class="container">
             <h2>Meet the Team</h2>
+            <style>
+                .team-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 30px;
+                    padding: 20px;
+                }
+                
+                .team-member {
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(10px);
+                    border-radius: 15px;
+                    padding: 30px;
+                    text-align: center;
+                    transition: transform 0.3s ease;
+                }
+                
+                .team-member:hover {
+                    transform: translateY(-5px);
+                }
+                
+                .team-icon {
+                    font-size: 3em;
+                    margin-bottom: 20px;
+                    background: linear-gradient(45deg, #ffd700, #ff8c00);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+                }
+                
+                .team-member h3 {
+                    margin: 15px 0;
+                    font-size: 1.5em;
+                }
+                
+                .team-member p {
+                    color: #666;
+                    line-height: 1.6;
+                }
+            </style>
             <div class="team-grid">
                 <div class="team-member">
-                    <div class="member-image">
-                        <img src="assets/images/nic.jpg" alt="Nic Drinkwater" onerror="this.src='assets/images/placeholder.jpg'">
-                    </div>
-                    <div class="member-info">
-                        <h3>Nic Drinkwater</h3>
-                        <p class="role">Author</p>
-                        <p class="description">Creator of these magical worlds and the stories that bring them to life.</p>
-                    </div>
+                    <i class="fas fa-pen-fancy team-icon"></i>
+                    <h3>Nic Drinkwater</h3>
+                    <p>Author</p>
+                    <p>Crafting tales of mystery and adventure across two worlds</p>
                 </div>
-
                 <div class="team-member">
-                    <div class="member-image">
-                        <img src="assets/images/raphaela.jpg" alt="Raphaela Miller" onerror="this.src='assets/images/placeholder.jpg'">
-                    </div>
-                    <div class="member-info">
-                        <h3>Raphaela Miller</h3>
-                        <p class="role">Illustrator</p>
-                        <p class="description">Bringing the characters and scenes to life through stunning artwork.</p>
-                    </div>
+                    <i class="fas fa-paint-brush team-icon"></i>
+                    <h3>Madison Wood</h3>
+                    <p>Illustrator</p>
+                    <p>Bringing imagination to life through art</p>
                 </div>
-
                 <div class="team-member">
-                    <div class="member-image">
-                        <img src="assets/images/madison.jpg" alt="Madison Wood" onerror="this.src='assets/images/placeholder.jpg'">
-                    </div>
-                    <div class="member-info">
-                        <h3>Madison Wood</h3>
-                        <p class="role">Illustrator</p>
-                        <p class="description">Creating beautiful illustrations that capture the magic of our stories.</p>
-                    </div>
+                    <i class="fas fa-palette team-icon"></i>
+                    <h3>Raphaela Miller</h3>
+                    <p>Illustrator</p>
+                    <p>Transforming stories into visual masterpieces</p>
                 </div>
             </div>
         </div>
