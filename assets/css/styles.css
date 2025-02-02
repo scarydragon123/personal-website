@@ -815,3 +815,166 @@ footer {
         padding: 2rem;
     }
 }
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    :root {
+        --nav-height: 60px;
+    }
+
+    /* Navigation */
+    .main-nav {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .nav-content {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-light);
+        margin: 3px 0;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Hero and Book Sections */
+    .hero, .book-hero {
+        padding: 1rem;
+    }
+
+    .split-container {
+        flex-direction: column;
+    }
+
+    .split {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .book-preview {
+        max-width: 100%;
+    }
+
+    .hero-tagline h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .book-description p {
+        font-size: 0.9rem;
+    }
+
+    /* Team Section */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Sections with Grid or Flex Layouts */
+    .story-content,
+    .characters-section .character-cards,
+    .world-features {
+        flex-direction: column;
+    }
+
+    .story-text, 
+    .story-quote,
+    .character-card,
+    .world-feature {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    /* Typography Adjustments */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Buttons */
+    .explore-btn, 
+    .pre-order-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* Animations and Interactions */
+    .portal-btn::before {
+        width: 200%;
+        height: 200%;
+    }
+}
+
+/* Very Small Screens */
+@media screen and (max-width: 480px) {
+    .hero-tagline h1 {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .book-description p {
+        font-size: 0.8rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
