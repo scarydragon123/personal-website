@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://scarydragon123.github.io/personal-website/sitemap.xml
