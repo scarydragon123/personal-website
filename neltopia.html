@@ -85,8 +85,16 @@
 <body class="neltopia-theme">
     <nav class="main-nav">
         <div class="nav-content">
-            <div class="logo"><a href="index.html">Nic Drinkwater</a></div>
-            <ul>
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-book-open"></i></span>
+                <span class="logo-text"><a href="index.html">Nic Drinkwater</a></span>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#story">Story</a></li>
                 <li><a href="#characters">Characters</a></li>
@@ -96,15 +104,17 @@
     </nav>
 
     <header class="book-hero">
+        <div class="background-overlay"></div>
         <div class="hero-content">
-            <h1>The Case of the Missing Children</h1>
+            <div class="hero-tagline">
+                <span class="tagline-decoration left"></span>
+                <h1>Enter Neltopia</h1>
+                <span class="tagline-decoration right"></span>
+            </div>
             <p class="tagline">Where magic meets mystery, and destiny awaits...</p>
             <div class="book-description">
                 <p>A magical mystery of lost children, ancient secrets, and a battle for survival.</p>
-                <p class="expanded-description">In the mystical realm of Neltopia, where ancient magic flows through every tree and whispers in every wind, three ordinary children find themselves thrust into an extraordinary adventure. Haunted by Master Loss, pursued by terrifying creatures, and guided by unlikely allies, they must uncover the truth about their origins. Can they outwit their captor and embrace their destiny before it's too late?</p>
-            </div>
-            <div class="magical-symbols">
-                <!-- Animated magical symbols will be added via CSS -->
+                <p class="expanded-description">In the mystical realm of Neltopia, where ancient magic flows through every corner, two siblings discover their extraordinary destiny.</p>
             </div>
         </div>
     </header>
@@ -172,41 +182,11 @@
         </div>
     </section>
 
-    <section class="creators-section">
-        <h2 class="section-title">The Creators</h2>
-        <div class="creators-grid">
-            <div class="creator-card">
-                <i class="fas fa-pen-fancy creator-icon"></i>
-                <div class="creator-info">
-                    <h3>Nic Drinkwater</h3>
-                    <p>Author</p>
-                    <p>Weaving tales of mystery and adventure</p>
-                </div>
-            </div>
-            <div class="creator-card">
-                <i class="fas fa-paint-brush creator-icon"></i>
-                <div class="creator-info">
-                    <h3>Sarah Anderson</h3>
-                    <p>Illustrator</p>
-                    <p>Bringing the world of Neltopia to life</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="pre-order-section">
         <div class="container">
             <h2>Begin Your Journey</h2>
             <p>Pre-order now and receive an exclusive digital map of Neltopia</p>
             <button class="pre-order-btn">Pre-order Now</button>
-            <div class="newsletter-signup">
-                <h3>Stay Updated</h3>
-                <p>Join our mailing list for exclusive content and updates</p>
-                <form id="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
         </div>
     </section>
 
