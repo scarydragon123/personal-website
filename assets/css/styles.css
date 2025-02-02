@@ -119,6 +119,32 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+@keyframes portalExpand {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(50);
+        opacity: 0;
+    }
+}
+
+@keyframes portalGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 
+                    0 0 20px rgba(30, 144, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 
+                    0 0 40px rgba(30, 144, 255, 0.8);
+    }
+}
+
 /* Navigation */
 .main-nav {
     position: sticky;
@@ -348,6 +374,46 @@ h1, h2, h3, h4, h5, h6 {
 
 .explore-btn:hover .btn-icon {
     transform: translateX(5px);
+}
+
+.portal-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    will-change: transform;
+}
+
+.portal-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: radial-gradient(
+        circle at center, 
+        rgba(255, 215, 0, 0.3) 0%, 
+        rgba(30, 144, 255, 0.3) 100%
+    );
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.portal-btn:hover::before {
+    width: 300%;
+    height: 300%;
+    opacity: 1;
+}
+
+.portal-btn:active {
+    animation: portalGlow 0.3s infinite alternate;
+}
+
+.portal-btn.portal-activated {
+    animation: portalExpand 1s forwards;
 }
 
 /* Team Section */
