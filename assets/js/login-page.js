@@ -36,9 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
             if (result.success) {
-                // Store login state
+                // Store login state and user details
                 localStorage.setItem('isLoggedIn', 'true');
                 localStorage.setItem('username', username);
+                
+                // Store full user details if available
+                if (result.userDetails) {
+                    localStorage.setItem('userDetails', JSON.stringify(result.userDetails));
+                }
 
                 // Redirect to home page
                 window.location.href = 'index.html';

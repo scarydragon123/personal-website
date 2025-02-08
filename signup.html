@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Personal Website</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- Additional Signup Page Styles -->
+    <style>
+        .signup-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--neltopia-background);
+            padding: 20px;
+        }
+
+        .signup-wrapper {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+        }
+
+        .signup-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .signup-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .signup-form input, 
+        .signup-form select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            grid-column: span 2;
+        }
+
+        .signup-form .half-width {
+            grid-column: span 1;
+        }
+
+        .signup-form button {
+            grid-column: span 2;
+            padding: 10px;
+            background-color: var(--neltopia-accent);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-form button:hover {
+            background-color: #45a049;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .login-link a {
+            color: var(--neltopia-accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-wrapper">
+            <div class="signup-header">
+                <h2>Create Your Account</h2>
+                <p>Fill in your details to get started</p>
+            </div>
+            
+            <form id="signupForm" class="signup-form">
+                <!-- Personal Information -->
+                <input type="text" id="firstName" name="firstName" placeholder="First Name" required class="half-width">
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required class="half-width">
+                
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                
+                <!-- Additional Details -->
+                <select id="country" name="country" required>
+                    <option value="">Select Country</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="AU">Australia</option>
+                    <!-- Add more countries as needed -->
+                </select>
+                
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number (Optional)" class="half-width">
+                <input type="date" id="birthdate" name="birthdate" placeholder="Date of Birth" class="half-width">
+                
+                <button type="submit">Sign Up</button>
+            </form>
+            
+            <div class="login-link">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/signup-page.js"></script>
+</body>
+</html>

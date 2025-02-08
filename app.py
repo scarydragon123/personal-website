@@ -33,6 +33,11 @@ def signup():
     username = data.get('username')
     email = data.get('email')
     password = data.get('password')
+    first_name = data.get('firstName')
+    last_name = data.get('lastName')
+    country = data.get('country')
+    phone = data.get('phone')
+    birthdate = data.get('birthdate')
 
     # Load existing users
     users = load_users()
@@ -45,11 +50,16 @@ def signup():
     # Hash the password
     hashed_password = hash_password(password)
 
-    # Create new user
+    # Create new user with additional details
     new_user = {
         'username': username,
         'email': email,
         'password': hashed_password,
+        'firstName': first_name,
+        'lastName': last_name,
+        'country': country,
+        'phone': phone,
+        'birthdate': birthdate,
         'created_at': datetime.now().isoformat()
     }
 
@@ -72,10 +82,15 @@ def login():
     users = load_users()
     for user in users:
         if user['username'] == username and user['password'] == hashed_password:
+            # Remove sensitive information before sending
+            user_details = user.copy()
+            user_details.pop('password', None)
+            
             return jsonify({
                 'success': True, 
                 'message': 'Login successful',
-                'username': username
+                'username': username,
+                'userDetails': user_details
             })
 
     return jsonify({'success': False, 'message': 'Invalid username or password'})
