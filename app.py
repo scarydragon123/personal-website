@@ -35,7 +35,6 @@ def signup():
     password = data.get('password')
     first_name = data.get('firstName')
     last_name = data.get('lastName')
-    country = data.get('country')
     phone = data.get('phone')
     birthdate = data.get('birthdate')
 
@@ -57,7 +56,6 @@ def signup():
         'password': hashed_password,
         'firstName': first_name,
         'lastName': last_name,
-        'country': country,
         'phone': phone,
         'birthdate': birthdate,
         'created_at': datetime.now().isoformat()

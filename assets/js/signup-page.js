@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             email: document.getElementById('email').value,
             username: document.getElementById('username').value,
             password: document.getElementById('password').value,
-            country: document.getElementById('country').value,
             phone: document.getElementById('phone').value || null,
             birthdate: document.getElementById('birthdate').value || null
         };
@@ -98,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Prefill non-sensitive fields
             document.getElementById('firstName').value = userData.firstName || '';
             document.getElementById('lastName').value = userData.lastName || '';
-            document.getElementById('country').value = userData.country || '';
             document.getElementById('phone').value = userData.phone || '';
             document.getElementById('birthdate').value = userData.birthdate || '';
         }
