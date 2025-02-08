@@ -77,6 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('username', userData.username);
                 localStorage.setItem('userDetails', JSON.stringify(userData));
 
+                // Show success message
+                alert('Signup successful! Welcome to the website.');
+
                 // Redirect to home page
                 window.location.href = 'index.html';
             } else {
