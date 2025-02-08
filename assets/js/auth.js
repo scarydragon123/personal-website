@@ -6,10 +6,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const switchToLoginBtn = document.getElementById('switchToLogin');
     const closeModalBtn = document.querySelector('.close');
 
-    // Show modal on page load
-    window.onload = () => {
+    // Authentication Icons
+    const loginIcon = document.getElementById('loginIcon');
+    const signupIcon = document.getElementById('signupIcon');
+    const userProfileIcon = document.getElementById('userProfileIcon');
+
+    // Check if user is already logged in
+    function checkAuthStatus() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        const username = localStorage.getItem('username');
+
+        if (isLoggedIn) {
+            loginIcon.style.display = 'none';
+            signupIcon.style.display = 'none';
+            userProfileIcon.style.display = 'block';
+            userProfileIcon.innerHTML = `<i class="fas fa-user" title="Profile (${username})"></i>`;
+        } else {
+            loginIcon.style.display = 'block';
+            signupIcon.style.display = 'block';
+            userProfileIcon.style.display = 'none';
+        }
+    }
+
+    // Initial auth status check
+    checkAuthStatus();
+
+    // Show modal on login/signup icon click
+    loginIcon.addEventListener('click', () => {
+        loginForm.style.display = 'flex';
+        signupForm.style.display = 'none';
         authModal.style.display = 'block';
-    };
+    });
+
+    signupIcon.addEventListener('click', () => {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'flex';
+        authModal.style.display = 'block';
+    });
 
     // Close modal when clicking 'x'
     closeModalBtn.onclick = () => {
@@ -44,7 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
             if (result.success) {
+                // Store login state
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', username);
+
+                // Hide modal and update icons
                 authModal.style.display = 'none';
+                checkAuthStatus();
+
                 alert('Login successful!');
             } else {
                 alert('Login failed: ' + result.message);
@@ -83,8 +123,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
             if (result.success) {
+                // Store login state
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', newUsername);
+
+                // Hide modal and update icons
                 authModal.style.display = 'none';
-                alert('Signup successful! You can now log in.');
+                checkAuthStatus();
+
+                alert('Signup successful! You are now logged in.');
             } else {
                 alert('Signup failed: ' + result.message);
             }
@@ -93,4 +140,16 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('An error occurred during signup.');
         }
     };
+
+    // Logout functionality for profile icon
+    userProfileIcon.addEventListener('click', () => {
+        // Clear login state
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('username');
+
+        // Update icons
+        checkAuthStatus();
+
+        alert('You have been logged out.');
+    });
 });
